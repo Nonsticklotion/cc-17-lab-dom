@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="Province">Province :</label>
+      <select name="Province" id="Province">
+        <option value="">Select</option>
+        <option value="">นครปฐม</option>
+        <option value="">เลย</option>
+      </select>
+    </div>
+    <label for="District">District :</label>
+    <select name="District" id="District">
+      <option value="">Select</option>
+    </select>
+  </body>
+  <script>
+    const nakhonpathomDistrict = [
+      "เมืองนครปฐม",
+      "กำแพงแสน",
+      "นครชัยศรี",
+      "ดอนตูม",
+      "บางเลน",
+      "สามพราน",
+      "พุทธมณฑล",
+    ];
+    const loeiDistrict = [
+      "เมืองเลย",
+      "นาด้วง",
+      "เชียงคาน",
+      "ปากชม",
+      "ด่านซ้าย",
+      "นาแห้ว",
+      "ภูเรือ",
+      "ท่าลี่",
+      "วังสะพุง",
+      "ภูกระดึง",
+      "ภูหลวง",
+      "ผาขาว",
+      "เอราวัณ",
+      "หนองหิน",
+    ];
+    const province = document.getElementById("Province");
+    const district = document.getElementById("District");
+
+    province.addEventListener("focus", function (event) {
+      if (event.target.value === "นครปฐม") {
+        nakhonpathomDistrict.map((item) =>
+          district.append(`<option>${item}</option>`)
+        );
+      }
+    });
+  </script>
+</html>
+
+<!-- จงสร้าง Label และ Select ดังรูป
+เมื่อ click <select> ของ Province ให้แสดงรายชื่อจังหวัด
+เมื่อ click <select> ของ District ให้แสดงอำเภอของจังหวัดที่ถูกเลือก -->
